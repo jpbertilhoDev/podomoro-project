@@ -1,0 +1,188 @@
+:root {
+  --color-primary: #8B1FF8;
+  --color-secondary: #144480;
+  --fundo-card-timer: rgba(20, 68, 128, 0.30);
+  --lils: #B872FF;
+  --color-text: #FFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.welcome-content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-logo {
+  margin-bottom: 2rem;
+}
+
+.welcome-logo img {
+  height: 60px;
+}
+
+.welcome-title {
+  color: var(--color-text);
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.welcome-subtitle {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+.welcome-question {
+  margin-bottom: 2rem;
+}
+
+.welcome-question h2 {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.welcome-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.welcome-option {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.welcome-option:hover {
+  transform: translateY(-5px);
+}
+
+.welcome-option h3 {
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.welcome-option p {
+  color: var(--color-text);
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.welcome-button .button-icon {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.welcome-button:hover .button-icon {
+  transform: translateX(5px);
+}
+
+.new-user {
+  background: var(--lils);
+  color: white;
+}
+
+.existing-user {
+  background: transparent;
+  color: white;
+  border: 2px solid var(--lils);
+}
+
+/* Animações dos elementos flutuantes */
+.floating-elements img {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  opacity: 0.5;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(10px, -10px); }
+  100% { transform: translate(0, 0); }
+}
+
+.float-1 {
+  top: 10%;
+  left: 10%;
+  animation: float 6s infinite;
+}
+
+.float-2 {
+  top: 20%;
+  right: 10%;
+  animation: float 7s infinite;
+}
+
+.float-3 {
+  bottom: 10%;
+  left: 15%;
+  animation: float 5s infinite;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .welcome-content {
+      padding: 2rem;
+  }
+
+  .welcome-title {
+      font-size: 2rem;
+  }
+
+  .welcome-buttons {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .welcome-option {
+      width: 100%;
+      max-width: 300px;
+  }
+
+  .floating-elements {
+      display: none;
+  }
+}

@@ -1,0 +1,96 @@
+<!-- pages/app.html -->
+<!DOCTYPE html>
+<html lang="pt-br" data-contexto="foco">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fokus - Timer</title>
+    <!-- Atualize os caminhos -->
+    <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/volume.css">
+    
+    <!-- Adicione o checkAuth -->
+    <script type="module">
+        import { checkAuth } from '../scripts/auth/checkAuth.js';
+        checkAuth();
+    </script>
+    <script src="../scripts/script.js" type="module" defer></script>
+</head>
+
+<body>
+    <main class="app">
+        <header class="app__header">
+            <figure class="app__logo-figure">
+                <img class="app__logo-image" src="/imagens/logo.png" alt="">
+            </figure>
+
+            <!-- Botão de sair à direita -->
+            <button class="logout-button">
+              <span>Sair</span>
+            </button>
+        </header>
+        <section class="app__section-banner-container">
+            <h1 class="app__title">
+                Otimize sua produtividade,<br>
+                <strong class="app__title-strong">mergulhe no que importa.</strong>
+            </h1>
+            <figure class="app__image-figure">
+                <img class="app__image" src="/imagens/foco.png" alt="">
+            </figure>
+        </section>
+        <section class="app__section-card-container">
+            <div class="app__card">
+                <ul class="app__card-list">
+                    <li class="app__card-list-item">
+                        <button data-contexto="foco" class="app__card-button app__card-button--foco active">Foco</button>
+                    </li>
+                    <li class="app__card-list-item">
+                        <button data-contexto="short" class="app__card-button app__card-button--curto">Descanso curto</button>
+                    </li>
+                    <li class="app__card-list-item">
+                        <button data-contexto="long" class="app__card-button app__card-button--longo">Descanso longo</button>
+                    </li>
+                </ul>
+                <div id="timer" class="app__card-timer"></div>
+                <ul class="app__card-list">
+                    <li class="app__card-list-item">
+                        <label class="toggle">
+                            <input class="toggle-checkbox" type="checkbox" id="alternar-musica">
+                            <div class="toggle-switch"></div>
+                        </label>
+                    </li>
+                    <li class="app__card-list-item">
+                        <label class="app__card-list-label" for="alternar-musica">
+                            Música
+                        </label>
+                    </li>
+                    <!-- Nova barra de volume -->
+                    <li class="app__card-list-item volume-slider">
+                        <input type="range" id="volume" class="volume-control" min="0" max="100" value="50" title="volume">
+                        <!-- <span class="tooltip">Volume</span> -->
+                    </li>
+                </ul>
+                <div class="app__card-primary-button-wrapper">
+                    <button id="start-pause" class="app__card-primary-button">
+                        <img class="app__card-primary-butto-icon" src="/imagens/play_arrow.png" alt="">
+                        <span>Começar</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- <footer class="app__footer">
+            <p class="app__footer-text">
+               
+            </p>
+        </footer> -->
+    </main>
+
+</body>
+
+</html>

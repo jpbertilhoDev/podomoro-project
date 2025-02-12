@@ -1,0 +1,3 @@
+<invoke name="builtin_run_terminal_command">
+<parameter name="command">mkdir -p modules</parameter>
+</invoke>
